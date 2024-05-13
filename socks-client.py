@@ -53,6 +53,7 @@ message_tx_button = tkinter.Button(root, text="SEND", bg="blue", fg="#FFFFFF", c
 message_tx_button.pack(anchor="n")
 root.protocol("WM_DELETE_WINDOW", on_closing)
 
-threading.Thread(target=rx_message)
+rx_thread = threading.Thread(target=rx_message)
+rx_thread.start()
 
 root.mainloop()
